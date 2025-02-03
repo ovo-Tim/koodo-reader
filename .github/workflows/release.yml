@@ -2,11 +2,6 @@ name: Build/release
 
 on:
   workflow_dispatch:
-    inputs:
-      release_version:
-        description: 'Release version'
-        required: true
-        default: '1.0.0'
 
 jobs:
   release:
@@ -39,6 +34,5 @@ jobs:
           # GitHub token, automatically provided to the action
           # (No need to define this secret in the repo settings)
           github_token: ${{ secrets.github_token }}
-
-          release: ${{ github.event.inputs.release_version }}
+          release: true
 
